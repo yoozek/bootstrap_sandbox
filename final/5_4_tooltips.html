@@ -13,7 +13,7 @@
 
 <body>
   <header>
-    <h1 class="display-3 text-center my-4">Grid System</h1>
+    <h1 class="display-3 text-center my-4">Tooltips</h1>
     <div class="container">
       <div class="row">
         <div class="col-md-3">
@@ -85,112 +85,78 @@
   </header>
 
   <div class="container">
-    <!--####################START HERE####################-->
+    <!--###################START HERE######################-->
 
-    <!-- RESPONSIVE GRID -->
-    <div>
-      <div style="border:1px solid #333">
-        <ul>
-          <li>6 column on small screens</li>
-          <li>8 column on medium screen</li>
-          <li>9 column on large screen</li>
-          <li>10 column on xlarge screen</li>
-        </ul>
-      </div>
-      <div style="border:1px solid #333">
-        <ul>
-          <li>6 column on small screens</li>
-          <li>4 column on medium screen</li>
-          <li>3 column on large screen</li>
-          <li>2 column on xlarge screen</li>
-        </ul>
-      </div>
-    </div>
+    <!-- TOOLTIPS -->
+    <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip On Top</button>
+    <button class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip On Right</button>
+    <button class="btn btn-warning" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip On Bottom</button>
+    <button class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip On Left</button>
 
-    <!-- EQUAL WIDTH -->
-    <div>
-      <div style="border:1px solid #333">Equal Width</div>
-      <div style="border:1px solid #333">Equal Width</div>
-      <div style="border:1px solid #333">Equal Width</div>
-      <div style="border:1px solid #333">Equal Width</div>
-    </div>
+    <br>
+    <br>
 
-    <!-- EQUAL WIDTH MULTI ROW -->
-    <div>
-      <div style="border:1px solid #333">Equal Width Multi</div>
-      <div style="border:1px solid #333">Equal Width Multi</div>
-      <div style="border:1px solid #333"></div>
-      <div style="border:1px solid #333">Equal Width Multi</div>
-      <div style="border:1px solid #333">Equal Width Multi</div>
-    </div>
+    <!-- TOOLTIPS WITH HTML -->
+    <button id="hello" class="btn btn-primary" data-toggle="tooltip" data-placement="top" data-html="true" title="<h3>Hello</h3><p>Hello World</p>">Tooltip On With HTML</button>
 
-    <!-- AUTO LAYOUT -->
-    <div>
-      <div style="border:1px solid #333">Auto Layout</div>
-      <div style="border:1px solid #333">Auto Layout</div>
-      <div style="border:1px solid #333">Auto Layout</div>
-    </div>
+    <hr>
 
-    <!-- EQUAL WIDTH STACKED -->
-    <div>
-      <div style="border:1px solid #333">Equal Width Stack</div>
-      <div style="border:1px solid #333">Equal Width Stack</div>
-      <div style="border:1px solid #333">Equal Width Stack</div>
-    </div>
+    <!-- TRIGGER WITH JS -->
+    <button class="btn btn-secondary" onclick="showTooltip()">
+      Show Tooltip
+    </button>
 
-    <!-- ORDERING -->
-    <div>
-      <div style="border:1px solid #333">
-        First
-      </div>
-      <div style="border:1px solid #333">
-        Second
-      </div>
-      <div style="border:1px solid #333">
-        Third
-      </div>
-    </div>
+    <button class="btn btn-secondary" onclick="hideTooltip()">
+      Hide Tooltip
+    </button>
 
-    <!-- OFFSETTING -->
-    <div>
-      <!-- 6 column div offset by 3 -->
-      <div style="border:1px solid #333">.col-md-6 .offset-md-3</div>
-    </div>
-    <div>
-      <!-- 2 4 column divs, the second offset by 4 -->
-      <div style="border:1px solid #333">.col-md-4</div>
-      <div style="border:1px solid #333">.col-md-4 .offset-md-4</div>
-    </div>
+    <button class="btn btn-secondary" onclick="toggleTooltip()">
+      Toggle Tooltip
+    </button>
 
-    <div>
-      <!-- 2 3 column divs, both offset by 3 -->
-      <div style="border:1px solid #333">.col-md-3 .offset-md-3</div>
-      <div style="border:1px solid #333">.col-md-3 .offset-md-3</div>
-    </div>
+  </div>
 
-    <!-- NESTING -->
-    <div>
-      <div style="border:1px solid blue">
-        Level 1: .col-sm-9
-        <div>
-          <div style="border:1px solid red">
-            Level 2: .col-8 .col-sm-6
-          </div>
-          <div style="border:1px solid red">
-            Level 2: .col-4 .col-sm-6
-          </div>
-        </div>
-      </div>
-    </div>
+  <div style="margin-top:500px;"></div>
 
-    <div style="margin-top:500px;"></div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script>
+    // Init tooltips
+    $('[data-toggle="tooltip"]').tooltip();
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-      crossorigin="anonymous"></script>
+    function showTooltip() {
+      $('#hello').tooltip('show');
+    }
+
+    function hideTooltip() {
+      $('#hello').tooltip('hide');
+    }
+
+    function toggleTooltip() {
+      $('#hello').tooltip('toggle');
+    }
+
+    // Tooltip Events
+    $('#hello').on('show.bs.tooltip', function () {
+      console.log('Tooltip Show');
+    });
+
+    $('#hello').on('shown.bs.tooltip', function () {
+      console.log('Tooltip Shown');
+    });
+
+    $('#hello').on('hide.bs.tooltip', function () {
+      console.log('Tooltip Hide');
+    });
+
+    $('#hello').on('hidden.bs.tooltip', function () {
+      console.log('Tooltip Hidden');
+    });
+  </script>
 </body>
 
 </html>
